@@ -1,20 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "LeetCode Guided Helper",
+  "name": "Leetcode Coding Assistant",
+  "description": "An AI-powered extension for stepwise hints, code validation, and learning resources.",
   "version": "1.0",
-  "description": "Helps you solve LeetCode questions with guided hints using Gemini API",
-  "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://leetcode.com/problems/*"],
-      "js": ["content.js"]
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
     }
-  ],
-  "background": {
-    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["http://localhost:3000/*"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
 }
