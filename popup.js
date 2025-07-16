@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     responseDiv.innerHTML = `<p>Loading...</p>`;
 
-    fetch('http://localhost:3000/api/gemini', {
+    fetch('http://localhost:3000/api/openai', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then(response => response.json())
       .then(data => {
-        responseDiv.innerHTML = `<h4>Gemini says:</h4><p>${data.reply}</p>`;
+        responseDiv.innerHTML = `<h4>AI says:</h4><p>${data.reply}</p>`;
       })
       .catch(error => {
         responseDiv.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
-        console.error('Error talking to Gemini:', error);
+        console.error('Error talking to OpenAI:', error);
       });
   });
 });
